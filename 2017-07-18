@@ -1,0 +1,189 @@
+1. Design Air traffic control system
+2. Ordering the Soldiers https://www.codechef.com/problems/ORDERS
+   In Byteland it is always the military officer's main worry to order his soldiers on parade correctly. 
+   Luckily, ordering soldiers is not really such a problem. If a platoon consists of n men, 
+   all of them have different rank (from 1 - lowest to n - highest) and on parade they should be lined up 
+   from left to right in increasing order of rank.
+   Sounds simple, doesn't it? Well, Sgt Johnny thought the same, 
+   until one day he was faced with a new command. 
+   He soon discovered that his elite commandos preferred to do the fighting, 
+   and leave the thinking to their superiors. 
+   So, when at the first rollcall the soldiers lined up in fairly random order it was not because of their lack of discipline, 
+   but simply because they couldn't work out how to form a line in correct order of ranks. 
+   Sgt Johnny was not at all amused, particularly as he soon found that none of the soldiers even remembered his own rank. 
+   Over the years of service every soldier had only learned which of the other soldiers were his superiors. 
+   But Sgt Johnny was not a man to give up easily when faced with a true military challenge. 
+   After a moment's thought a solution of brilliant simplicity struck him and he issued the following order: 
+   "men, starting from the left, one by one, do: (step forward; 
+   go left until there is no superior to the left of you; get back in line).". 
+   This did indeed get the men sorted in a few minutes. The problem was solved... for the time being.
+   The next day, the soldiers came in exactly the same order as the day before, and had to be rearranged using 
+   the same method. History repeated. After some weeks, Sgt Johnny managed to force each of his soldiers to remember 
+   how many men he passed when going left, and thus make the sorting process even faster.
+   If you know how many positions each man has to walk to the left, 
+   can you try to find out what order of ranks the soldiers initially line up in?
+   
+   Input
+   The first line of input contains an integer t<=50, the number of test cases. 
+   It is followed by t test cases, each consisting of 2 lines. 
+   The first line contains a single integer n (1<=n<=200000). 
+   The second line contains n space separated integers wi, 
+   denoting how far the i-th soldier in line must walk to the left when applying Sgt Johnny's algorithm.
+   Output
+   For each test case, output a single line consisting of n space separated integers - the ranks of the soldiers, 
+   given from left to right in their initial arrangement.
+   Example
+   Input:
+   2
+   3
+   0 1 0
+   5
+   0 1 2 0 1
+   
+   Output:
+   2 1 3
+   3 2 1 5 4
+   
+3. Prime Distance On Tree https://www.codechef.com/problems/PRIMEDST
+   You are given a tree. If we select 2 distinct nodes uniformly at random, 
+   what's the probability that the distance between these 2 nodes is a prime number?
+   Input
+   The first line contains a number N: the number of nodes in this tree.
+   The following N-1 lines contain pairs a[i] and b[i], which means there is an edge with length 1 between a[i] and b[i].
+   
+   Output
+   Output a real number denote the probability we want.
+   You'll get accept if the difference between your answer and standard answer is no more than 10^-6.
+   
+   Constraints
+   2 ≤ N ≤ 50,000
+   
+   The input must be a tree.
+   
+   Example
+   Input:
+   5
+   1 2
+   2 3
+   3 4
+   4 5
+   
+   Output:
+   0.5
+   Explanation
+   We have C(5, 2) = 10 choices, and these 5 of them have a prime distance:
+   1-3, 2-4, 3-5: 2
+   1-4, 2-5: 3
+   Note that 1 is not a prime number.
+   
+4. Polo the Penguin and the Tree https://www.codechef.com/problems/PPTREE
+	 Polo, the Penguin, likes the XOR operation. Please read NOTE if you are not familiar with XOR operation.
+
+	XOR-sum of a list of numbers is the result of XOR-ing all of them. 
+  XOR-sum of (A[1] XOR A[2] XOR ... XOR A[N]) is defined as A[1] XOR (A[2] XOR (A[3] XOR ( ... XOR A[N]))).
+
+	Apart of that, Polo, the Penguin, likes trees. He has a weighted tree consisting of N vertices.
+
+	He also likes to choose some pair of vertices U and V and find XOR-sum of all weights on the simple path from U to V. 
+  Help him to find the maximal number he can get .
+
+	Input
+	The first line of the input contains an integer T denoting the number of test cases. 
+  The description of T test cases follows. The first line of each test case contains a single integer N denoting the number of vertices in the tree. The next N-1 lines contain description of edges of the tree, one edge per line in format U[i] V[i] W[i], where U[i] and V[i] are the indices of the vertices of edge and W[i] is the weight of the edge. Vertices are numbered from 1 to N, inclusive.
+
+	Output
+	For each test case, output a single line containing the answer to the corresponding test case. 
+
+	Constraints
+	1 ≤ T ≤ 7
+	1 ≤ N ≤ 100,000
+	0 ≤ W[i] ≤ 1,000,000,000 
+	Example
+	Input:
+	2
+	3
+	1 2 3
+	3 1 2
+	4
+	1 2 2
+	1 3 2
+	4 3 1
+
+	Output:
+	3
+	3
+	Explanation
+	Example case 1. In this case there are tree ways to choose pair of vertices:
+
+	(1, 2): The only edge you path is edge (1, 2) with weight 3. The XOR-sum is simply 3.
+	(1, 3): The only edge you path is edge (1, 3) with weight 2. The XOR-sum is simply 2.
+	(2, 3): There are two edges on the path in this case: (2, 1) and (1, 3) with weights 3 and 2, respectively. The XOR-sum is 3 XOR 2 = 1.
+	So the maximal value Polo can get is 3.
+
+	Example case 2. If Polo chooses vertices 1 and 4, 
+  then the XOR-sum is equal to 2 XOR 1 = 3. This is the maximal value he can get in this case.
+
+5. Music & Lyrics https://www.codechef.com/problems/LYRC
+	Chef Sridhar listenes to music while cooking. He realized that the lyrics of many songs contain the same words. 
+  He thought of a task to do in his leisure; pick a set of words and find the frequency of the words 
+  in the lyrics of various songs.
+
+	A word A from the lyrics is said to match a given word W if W is a substring of A.
+
+	Note Some words from the lyrics can match multiple given words. For e.g, shawty, matches both shawty as well as hawt. 
+  The word shawty in the lyrics must be counted in the frquency of shawty as well as hawt.
+
+	You may assume that all the comparisons must be case sensitive. 
+  Also, there are no whitespaces within a word in the given list, or in the lyrics. 
+  Words in the lyrics are separated by "-" characters (of course without the quotes).
+
+	Input
+	First line contains an integer W, denoting the number of words Chef has decided to find the frequencies of. 
+  Then follow W lines containing a word (P) each. 
+  The next line contains N, the number of lyrics Chef decided to index. 
+  Followed by N lines containing a string (S) which chef has to index. 
+  You can assume that S doesn't contain any whitespace characters.
+
+	Output
+	The output contains W lines each denoting the frequency of the respective word in all of the lyrics together.
+
+	Constraints
+	1 ≤ W ≤ 500
+	1 ≤ |P| ≤ 5000, where |P| denotes length of each word.
+	1 ≤ N ≤ 100
+	1 ≤ |S| ≤ 50000, where |S| denotes the length of lyric of each song.
+	All the characters will be either uppercase or lowercase english alphabets or numbers or "-".
+
+	Examples
+	Sample Input 1
+	5
+	he
+	she
+	sher
+	his
+	hers
+	2
+	ushers
+	she-said-he-said-she-said-he-said-his
+
+	Sample Output 1
+	5
+	3
+	1
+	1
+	1
+
+
+	Sample Input 2
+	3
+	who
+	shawty
+	hawt
+	2
+	Get-it-shawty-Get-it-shawty
+	Whoa-W-W-Whoa-Shawtyyyyy
+
+	Sample Output 2
+	0
+	2
+	3
