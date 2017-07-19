@@ -1,0 +1,173 @@
+1. Design a a massively multiplayer online game (MMO).
+2. MARTIAN - Martian Mining http://www.spoj.com/problems/MARTIAN/
+   The NASA Space Center, Houston, is less than 200 miles from San Antonio, Texas (the site of the ACM Finals this year). 
+   This is the place where the astronauts are trained for Mission Seven Dwarfs, the next giant leap in space exploration. 
+   The Mars Odyssey program revealed that the surface of Mars is very rich in yeyenum and bloggium. 
+   These minerals are important ingredients for certain revolutionary new medicines, but they are extremely rare on Earth. 
+   The aim of Mission Seven Dwarfs is to mine these minerals on Mars and bring them back to Earth.
+   The Mars Odyssey orbiter identified a rectangular area on the surface of Mars that is rich in minerals. 
+   The area is divided into cells that form a matrix of n rows and m columns, where the rows go from east to west 
+   and the columns go from north to south. The orbiter determined the amount of yeyenum and bloggium in each cell. 
+   The astronauts will build a yeyenum refinement factory west of the rectangular area and a bloggium factory to the north.
+   Your task is to design the conveyor belt system that will allow them to mine the largest amount of minerals.
+   There are two types of conveyor belts: the first moves minerals from east to west, 
+   the second moves minerals from south to north. In each cell you can build either type of conveyor belt, 
+   but you cannot build both of them in the same cell. 
+   If two conveyor belts of the same type are next to each other, then they can be connected. 
+   For example, the bloggium mined at a cell can be transported to the bloggium refinement factory via 
+   a series of south-north conveyor belts.
+   The minerals are very unstable, thus they have to be brought to the factories on a straight path without any turns. 
+   This means that if there is a south-north conveyor belt in a cell, 
+   but the cell north of it contains an east-west conveyor belt, 
+   then any mineral transported on the south-north conveyor beltwill be lost. 
+   The minerals mined in a particular cell have to be put on a conveyor belt immediately, 
+   in the same cell (thus they cannot start the transportation in an adjacent cell). 
+   Furthermore, any bloggium transported to the yeyenum refinement factory will be lost, and vice versa.
+   
+   Your program has to design a conveyor belt system that maximizes the total amount of minerals mined,
+   i.e., the sum of the amount of yeyenum transported to the yeyenum refinery 
+   and the amount of bloggium transported to the bloggium refinery.
+   
+   Input
+   The input contains several blocks of test cases. Each case begins with a line containing two integers: 
+   the number 1 <= n <= 500 of rows, and the number 1 <= m <= 500 of columns. 
+   The next n lines describe the amount of yeyenum that can be found in the cells. 
+   Each of these n lines contains m integers. 
+   The first line corresponds to the northernmost row; 
+   the first integer of each line corresponds to the westernmost cell of the row. 
+   The integers are between 0 and 1000. 
+   The next n lines describe in a similar fashion the amount of bloggium found in the cells.
+   The input is terminated by a block with n = m = 0.
+   Output
+   For each test case, you have to output a single integer on a separate line: 
+   the maximum amount of mineralsthat can be mined.
+   Example
+   Input:
+   4 4
+   0 0 10 9
+   1 3 10 0
+   4 2 1 3 
+   1 1 20 0
+   10 0 0 0
+   1 1 1 30
+   0 0 5 5
+   5 10 10 10
+   0 0
+   Output
+   98
+3. MIXTURES - Mixtures http://www.spoj.com/problems/MIXTURES/
+  Harry Potter has n mixtures in front of him, arranged in a row. 
+  Each mixture has one of 100 different colors (colors have numbers from 0 to 99).
+  He wants to mix all these mixtures together. 
+  At each step, he is going to take two mixtures that stand next to each other and mix them together, 
+  and put the resulting mixture in their place.
+  When mixing two mixtures of colors a and b, the resulting mixture will have the color (a+b) mod 100.
+  Also, there will be some smoke in the process. 
+  The amount of smoke generated when mixing two mixtures of colors a and b is a*b.
+  Find out what is the minimum amount of smoke that Harry can get when mixing all the mixtures together.
+  Input
+  There will be a number of test cases in the input.
+  The first line of each test case will contain n, the number of mixtures, 1 <= n <= 100.
+  The second line will contain n integers between 0 and 99 - the initial colors of the mixtures.
+  Output
+  For each test case, output the minimum amount of smoke.
+  Example
+  Input:
+  2
+  18 19
+  3
+  40 60 20
+  Output:
+  342
+  2400
+  In the second test case, there are two possibilities:
+  first mix 40 and 60 (smoke: 2400), getting 0, then mix 0 and 20 (smoke: 0); total amount of smoke is 2400
+  first mix 60 and 20 (smoke: 1200), getting 80, then mix 40 and 80 (smoke: 3200); total amount of smoke is 4400
+  The first scenario is a much better way to proceed.
+  
+4. BUGLIFE - A Bug’s Life http://www.spoj.com/problems/BUGLIFE/
+   Professor Hopper is researching the sexual behavior of a rare species of bugs. 
+   He assumes that they feature two different genders and that they only interact with bugs of the opposite gender. 
+   In his experiment, individual bugs and their interactions were easy to identify, 
+   because numbers were printed on their backs.
+   Given a list of bug interactions, decide whether the experiment supports his assumption of 
+   two genders with no homosexual bugs or if it contains some bug interactions that falsify it.
+   Input
+   The first line of the input contains the number of scenarios. 
+   Each scenario starts with one line giving the number of bugs (at least one, 
+   and up to 2000) and the number of interactions (up to 1000000) separated by a single space. 
+   In the following lines, each interaction is given in the form of two distinct bug numbers separated by a single space. 
+   Bugs are numbered consecutively starting from one.
+   Output
+   The output for every scenario is a line containing “Scenario #i:”, 
+   where i is the number of the scenario starting at 1, 
+   followed by one line saying either “No suspicious bugs found!” 
+   if the experiment is consistent with his assumption about the bugs’ sexual behavior, 
+   or “Suspicious bugs found!” if Professor Hopper’s assumption is definitely wrong.
+   Example
+   Input:
+   2
+   3 3
+   1 2
+   2 3
+   1 3
+   4 2
+   1 2
+   3 4
+   
+   Output:
+   Scenario #1:
+   Suspicious bugs found!
+   Scenario #2:
+   No suspicious bugs found!
+   
+5. ANARC08G - Think I will Buy Me a Football Team http://www.spoj.com/problems/ANARC08G/
+   Falling Stocks. Bankrupted companies. Banks with no Cash. 
+   Seems like the best time to invest: "Think I'll buy me a football team!" 
+   No seriously, I think I have the solution to at least the problem of cash in banks. 
+   Banks nowadays are all owing each other great amounts of money a
+   nd no bank has enough cash to pay other banks' debts even though, on paper at least, 
+   they should have enough money to do so. Take for example the inter-bank loans shown in figure (a). 
+   The graph shows the amounts owed between four banks (A ...D). 
+   For example, A owes B 50M while, at the same time, B owes A 150M. 
+   (It is quite common for two banks to owe each other at the same time.) 
+   A total amount of 380M in cash is needed to settle all debts between the banks. 
+   In an attempt to decrease the need for cash, and after studying the example carefully, 
+   I concluded that there's a lot of cash being transferred unnecessarily. Take a look: 
+   1. C owes D the same amount as D owes A, so we can say that C owes A an amount of 30M and get D out of the picture.
+   2. But since A already owes C 100M, we can say that A owes C an amount of 70M. 
+   3. Similarly, B owes A 100M only, (since A already owes B 50M.) 
+   This reduces the above graph to the one shown in figure (b) which reduces the needed cash amount to 190M 
+   (A reduction of 200M, or 53%.) 
+   4. I can still do better. Rather than B paying A 100M and A paying 70M to C, 
+   B can pay 70M (out of A's 100M) directly to C. 
+   This reduces the graph to the one shown in figure (c). 
+   Banks can settle all their debts with only 120M in cash. 
+   A total reduction of 260M or 68%. Amazing! 
+   I have data about inter-bank debts 
+   but I can't seem to be able to process it to obtain the minimum amount of cash needed to settle all the debts. 
+   Could you please write a program to do that?
+   Input
+   Your program will be tested on one or more test cases. 
+   Each test case is specified on N + 1 lines where N < 1, 
+   000 is the number of banks and is specified on the first line. 
+   The remaining N lines specifies the inter-bank debts using an NXN adjacency matrix 
+   (with zero diagonal) specified in row-major order. 
+   The ith row specifies the amounts owed by the ith bank. 
+   Amounts are separated by one or more spaces. All amounts are less than 1000. 
+   The last line of the input file has a single 0.
+   Output
+   For each test case, print the result using the following format: 
+   k. B A 
+   where k is the test case number (starting at 1,) is a space character, 
+   B is the amount of cash needed before reduction and A is the amount of cash after reduction.
+   Example
+   Input:
+   4
+  0  50 100   0
+  150   0  20   0
+  0   0   0  30
+  30   0   0   0
+  0
+  Output:
+  1. 380 120
